@@ -6,16 +6,16 @@ using System.Threading.Tasks;
 
 namespace Library
 {
-    class DVD: Media
+    class DVD: Media // to connect Dvd to it's parent Media
 
     {
         public override int RentalLength
         {
             get
             {
-                throw new NotImplementedException();
+                return 7;
             }
-
+            /// dummy set method- doesn't do anything
             set
             {
                 throw new NotImplementedException();

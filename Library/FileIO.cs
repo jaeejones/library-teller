@@ -37,16 +37,20 @@ namespace Library
                 //remember to close your file
                 //file.Close();
             }
-            catch (FileNotFoundException)
+            catch (Exception ex)
             {
+                Console.WriteLine(ex);
+                Console.WriteLine("And Exception has happend,please be advised.");
+
                 //write out appropriate message
-                    //implement
-            }
-            catch (Exception e)
+                //implement
+
+             }
+           /* catch (Exception ex)
             {
                 //write out the message of e
                     //implement
-            }
+            } there where two of those exceptions */
 
             return mediaFile;
         }

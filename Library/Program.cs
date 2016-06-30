@@ -61,3 +61,5 @@ namespace Library
         }
     }
 }
+
+//hint List<string>lines.Tolist();
