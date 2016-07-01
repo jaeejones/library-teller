@@ -17,40 +17,28 @@ namespace Library
             try
             {
                 //check to see whether the file exists
-                if (!File.Exists(path))
-                {
+
+
+                mediaFile = File.ReadLines(path).ToList(); 
                     //throw appropriate exepction
-                        //implement
-                }
+                        //implement                
 
-                //initialize the empty string we'll be using for each line
-                string line;
-
-                //open a StreamReader to the file specifcied in the path variable 
-                    //implement
-
-                //while reading a new from file, addd each line to mediaFile
-                //as long as each new line is not null
-                    //implement
-
-
-                //remember to close your file
-                //file.Close();
+                
             }
-            catch (Exception ex)
+            catch (FileNotFoundException)
             {
-                Console.WriteLine(ex);
                 Console.WriteLine("And Exception has happend,please be advised.");
 
                 //write out appropriate message
                 //implement
 
              }
-           /* catch (Exception ex)
+            catch (Exception e)
             {
-                //write out the message of e
+                Console.WriteLine(e);
+                //write out the message
                     //implement
-            } there where two of those exceptions */
+            } 
 
             return mediaFile;
         }
@@ -62,3 +50,12 @@ namespace Library
         }
     }
 }
+/*Throw an appropriate exception when the file is not found
+Open a StreamReader in the folder specified in the path variable that is passed into ReturnMediaFile
+Implement a while loop to read the file line by line and add each line to mediaFile
+Write a message to be written out when FileNotFoundException is thrown
+Write a message to be written when a general exception is thrown */
+
+/*var lines = File.ReadLines(@"Cupcakes.txt");
+
+int[] favoriteNumbers = { 7, 3, 12, 19, 26, 14 };*/

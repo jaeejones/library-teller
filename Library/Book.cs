@@ -23,11 +23,16 @@ namespace Library
 
         public override void PrintMediaDetails()
         {
-            throw new NotImplementedException();
+            Console.WriteLine("Book {0} ({1})", Title, Length);
+            Console.WriteLine("Rented on: {0}", RentedDate);
+            Console.WriteLine("Due on {0}", ReturnDueDate());
+
+             throw new NotImplementedException();
         }
 
         public override DateTime ReturnDueDate()
         {
+            return RentedDate.AddDays(RentalLength);
             throw new NotImplementedException();
         }
     }
