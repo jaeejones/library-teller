@@ -36,14 +36,14 @@ namespace Library
                 if (match.Success)
                 {
                     //populate each component with the values from your capture groups
-                    string type = match.Groups[1].ToString();
+                    string type = match.Groups[1].ToString(); // pulled out the objects and placed it in a string. 
                     string title = match.Groups[2].ToString();
                     string length = match.Groups[3].ToString();
 
                     //using the components we got figure out which type of object we should create and insert
                     if (type.Equals("Book"))
                     {
-                        Book newBook = new Book();
+                        Book newBook = new Book(); // upper Book is class. Lower is a var
                         newBook.Title = title;
                         newBook.Length = length;
                         rentedMedia.Add(newBook);
@@ -80,7 +80,7 @@ namespace Library
             }
 
             //for each media item we have in the list print the details for each
-            foreach (Media mediaItem in rentedMedia)
+            foreach (Media mediaItem in rentedMedia) // Media to rent is the list of strings 
             {
 
                 mediaItem.PrintMediaDetails();
