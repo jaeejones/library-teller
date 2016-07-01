@@ -12,19 +12,35 @@ namespace Library
         public List<string> ReturnMediaFile(string path)
         {
             //initialize the list we'll be returning
-            List<string> mediaFile = new List<string>();
+            List<string> mediaFile = new List<string>();// This is to look at the file and spit out strings. This is an empt list
+                                                        //throw appropriate exepction
+
 
             try
             {
                 //check to see whether the file exists
 
+                if (!File.Exists(path))
 
-                mediaFile = File.ReadLines(path).ToList(); 
-                    //throw appropriate exepction
-                        //implement                
+                {
+                    throw new FileLoadException("file Not Found", path);
+                }
 
-                
             }
+
+            string line;
+            using (StreamReader reader = new StreamReader(path))
+            {
+
+                line = reader.ReadLine();
+
+                while (line != null)
+                {
+                    mediaFile.Add(line); //This reads the line of the same file. 
+                }
+                line = reader.ReadLine();    // reads the next line   
+            }
+
             catch (FileNotFoundException)
             {
                 Console.WriteLine("And Exception has happend,please be advised.");
@@ -32,15 +48,15 @@ namespace Library
                 //write out appropriate message
                 //implement
 
-             }
-            catch (Exception e)
+            }
+            catch (Exception e) // e is the var the pts to the exceptions
             {
                 Console.WriteLine(e);
                 //write out the message
-                    //implement
-            } 
+                //implement
+            }
 
-            return mediaFile;
+            return mediaFile; // media file is the list we are building
         }
 
         //not yet implemented
@@ -50,6 +66,9 @@ namespace Library
         }
     }
 }
+
+
+
 /*Throw an appropriate exception when the file is not found
 Open a StreamReader in the folder specified in the path variable that is passed into ReturnMediaFile
 Implement a while loop to read the file line by line and add each line to mediaFile

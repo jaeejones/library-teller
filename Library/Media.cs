@@ -25,7 +25,7 @@ namespace Library
 
             Console.WriteLine("Rented on: {0}",RentedDate);
 
-            Console.WriteLine("Due on:{0}",ReturnDueDate())//wht is Return Date called? A method
+            Console.WriteLine("Due on:{0}",ReturnDueDate())//what is Return Date called? A method
         }
 
         public abstract DateTime ReturnDueDate();
